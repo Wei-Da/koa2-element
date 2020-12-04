@@ -6,7 +6,7 @@ const Router = require('koa-router');
 const User = require('../../models/Users');
 
 const router = new Router();
-router.prefix('/users')
+router.prefix('/api/users')
 
 router.get('/', async (ctx) => {
   try {

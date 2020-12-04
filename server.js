@@ -1,7 +1,9 @@
 const Koa = require('koa');
+const cors = require('koa2-cors');
 const bodyParser = require('koa-bodyparser');
 
 const app = new Koa();
+app.use(cors());
 app.use(bodyParser());
 
 const mongoose = require('mongoose');
@@ -35,6 +37,6 @@ mongoose.connect(mongoURI, { useNewUrlParser: true })
 app.use(users.routes()).use(users.allowedMethods())
 app.use(profiles.routes()).use(profiles.allowedMethods())
 
-app.listen(3000, () => {
+app.listen(5001, () => {
   console.log('server is starting at port 3000')
 });
