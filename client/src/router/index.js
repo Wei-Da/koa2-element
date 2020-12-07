@@ -10,6 +10,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    // hidden: true
+  },
   // {
   //   path: '/about',
   //   name: 'About',
